@@ -1,7 +1,7 @@
 #include <neri/net/socket.h>
 
 
-int start_server()
+int create_socket()
 {
     int socket_fd, new_socket, opt = 1;
     ssize_t valread;
