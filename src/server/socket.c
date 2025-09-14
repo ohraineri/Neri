@@ -1,6 +1,5 @@
 #include <neri/net/socket.h>
 
-
 int create_socket()
 {
     int socket_fd, new_socket, opt = 1;
@@ -8,6 +7,7 @@ int create_socket()
     struct sockaddr_in address;
     socklen_t addtlen = sizeof(address);
     char buffer[1024] = { 0 };
+
     if((socket_fd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
         perror("\e[41m ERROR \e[49m The socket could not be created");
         exit(EXIT_FAILURE); 
@@ -38,7 +38,6 @@ int create_socket()
         exit(EXIT_FAILURE);
     }
     valread = read(new_socket, buffer, 1024 - 1);
-    printf("[%d]\n%s", valread, buffer);
     send(new_socket, "test", 4, 0);
     close(new_socket);
     }
