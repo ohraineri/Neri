@@ -13,4 +13,6 @@
 
 #define PORT 8000
 
+int create_socket();
+
 #endif
